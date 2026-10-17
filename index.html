@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff5f2">
+<title>Love Radar 💘</title>
+<style>
+:root{--cream:#fff8f3;--pink:#f7dce2;--rose:#d94f70;--ink:#382a30;--muted:#806e75;--green:#dff2e5;--red:#ffe0e1;--amber:#fff0c9;--line:#f0dfe0}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top right,#ffe8ed 0,transparent 34%),var(--cream);color:var(--ink);font-family:ui-rounded,"Avenir Next",system-ui,-apple-system,sans-serif}
+.wrap{max-width:760px;margin:auto;padding:22px 16px 48px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px}.brand{font-weight:900;letter-spacing:-.04em;font-size:1.05rem}.pill{font-size:.76rem;border:1px solid var(--line);border-radius:99px;padding:7px 10px;background:#fff9}
+.hero{text-align:center;padding:18px 6px 22px}.logo{width:74px;height:74px;margin:0 auto 14px;border-radius:25px;background:linear-gradient(145deg,#ffdce5,#f3a9bd);display:grid;place-items:center;font-size:2.3rem;box-shadow:0 9px 24px #d94f7020}.eyebrow{text-transform:uppercase;letter-spacing:.16em;color:var(--rose);font-size:.7rem;font-weight:850}.hero h1{font-size:clamp(2.4rem,9vw,4rem);letter-spacing:-.07em;line-height:1;margin:10px 0}.hero p{max-width:470px;margin:12px auto;color:var(--muted);line-height:1.55}.card{background:#fffdfb;border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:0 12px 35px #70434d0b;margin:14px 0}.card h2{font-size:1.15rem;margin:0 0 7px;letter-spacing:-.025em}.sub{color:var(--muted);font-size:.9rem;line-height:1.5;margin:0 0 17px}label{display:block;font-weight:750;font-size:.88rem;margin:14px 0 8px}textarea,select{width:100%;border:1px solid #e9d6d9;background:#fffaf8;border-radius:15px;padding:14px;color:var(--ink);font:inherit;outline:none}textarea{min-height:132px;resize:vertical;line-height:1.5}textarea:focus,select:focus{border-color:var(--rose);box-shadow:0 0 0 3px #d94f7018}.examples{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}.chip{border:1px solid var(--line);background:white;color:#71535d;border-radius:99px;padding:8px 11px;font-size:.78rem;cursor:pointer}.chip:hover{border-color:var(--rose)}.primary{width:100%;border:0;border-radius:15px;padding:15px 18px;background:var(--rose);color:white;font:inherit;font-weight:850;cursor:pointer;box-shadow:0 7px 15px #d94f7028}.primary:hover{filter:brightness(.97)}.fine{font-size:.75rem;line-height:1.45;color:var(--muted);margin:12px 2px 0}.result{display:none}.verdict{display:flex;gap:13px;align-items:center;padding:15px;border-radius:17px;margin:16px 0}.verdict .emoji{font-size:2rem}.verdict h3{margin:0 0 4px;font-size:1.08rem}.verdict p{margin:0;font-size:.88rem;line-height:1.45}.green{background:var(--green)}.red{background:var(--red)}.amber{background:var(--amber)}.section{margin-top:18px}.section h4{margin:0 0 7px;font-size:.93rem}.section p,.section li{font-size:.91rem;line-height:1.55;color:#5f4d54}.section ul{padding-left:20px;margin:7px 0}.disclaimer{background:#fff5e8;border-radius:15px;padding:13px;font-size:.8rem;line-height:1.5;color:#745c48;margin-top:18px}.footer{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.5;padding:18px 8px}.hidden{display:none!important}.tagline{font-size:.8rem;color:var(--rose);font-weight:800}.reset{background:transparent;border:0;color:var(--rose);font:inherit;font-weight:800;cursor:pointer;padding:12px 0 0}@media(min-width:600px){.wrap{padding:30px 22px 55px}.card{padding:28px}.hero{padding-top:25px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header class="top"><div class="brand">💘 LOVE RADAR</div><div class="pill">ta bestie numérique</div></header>
+  <section class="hero">
+    <div class="logo">💌</div><div class="eyebrow">Le détecteur de vibes</div>
+    <h1>Amour ou<br><span style="color:var(--rose)">alerte rouge ?</span></h1>
+    <p>Raconte-nous ce qu’il a fait ou dit. On débriefe sans jugement, sans dramatiser… et sans laisser passer les vrais signaux d’alerte.</p>
+  </section>
+  <section class="card" id="formCard">
+    <h2>Ok bestie, raconte 👀</h2>
+    <p class="sub">Un comportement précis vaut mieux qu’une étiquette du genre « il est bizarre ».</p>
+    <label for="behavior">Qu’est-ce qui s’est passé ?</label>
+    <textarea id="behavior" maxlength="1200" placeholder="Ex. Il boude et ne me parle plus quand je sors avec mes amies…"></textarea>
+    <div class="examples"><button class="chip" data-example="Il veut savoir où je suis et avec qui tout le temps.">Contrôle / jalousie</button><button class="chip" data-example="Il dit qu’il veut du sérieux, mais annule souvent au dernier moment.">Chaud-froid</button><button class="chip" data-example="Il respecte quand je dis non et ne me met jamais la pression.">Respect des limites</button><button class="chip" data-example="Il me couvre de cadeaux et dit qu’il m’aime après quelques jours.">Il va très vite</button></div>
+    <label for="frequency">C’est arrivé…</label>
+    <select id="frequency"><option value="once">Une seule fois</option><option value="sometimes">Quelques fois</option><option value="often">Souvent / c’est un schéma</option></select>
+    <label for="reaction">Quand tu lui en parles, il… (facultatif)</label>
+    <select id="reaction"><option value="unknown">Je ne sais pas / pas encore parlé</option><option value="listens">Écoute et essaie de comprendre</option><option value="dismisses">Minimise, se moque ou me culpabilise</option><option value="angry">Se met en colère / me fait peur</option></select>
+    <button class="primary" id="analyze">Décrypter la situation 💘</button>
+    <p class="fine">Petit rappel : on évalue un comportement, pas toute une personne. Le contexte compte, et tu n’as pas besoin d’une « preuve parfaite » pour poser tes limites.</p>
+  </section>
+  <section class="card result" id="result" aria-live="polite">
+    <div class="tagline">TON LOVE RADAR A PARLÉ</div>
+    <div class="verdict amber" id="verdict"><div class="emoji" id="emoji">👀</div><div><h3 id="verdictTitle">Hmm… à surveiller</h3><p id="summary"></p></div></div>
+    <div class="section"><h4>🧠 Pourquoi ?</h4><p id="why"></p></div>
+    <div class="section"><h4>🔎 Ce qu’il faut observer</h4><ul id="observe"></ul></div>
+    <div class="section"><h4>💬 La question à te poser</h4><p id="question"></p></div>
+    <div class="section"><h4>✨ La phrase de bestie</h4><p id="bestie"></p></div>
+    <div class="disclaimer" id="safety"></div>
+    <button class="reset" id="reset">← Analyser une autre situation</button>
+  </section>
+  <section class="card"><h2>Nos règles de bestie 💅</h2><p class="sub" style="margin-bottom:10px">Un bon partenaire n’est pas parfait. Mais il respecte tes limites, assume ses actes et fait des efforts cohérents.</p><ul style="color:#5f4d54;line-height:1.7;padding-left:20px;margin:0"><li>Les actes comptent plus que les grandes déclarations.</li><li>Une erreur suivie d’une vraie réparation n’est pas la même chose qu’un schéma répété.</li><li>La peur, les menaces, la coercition et le contrôle ne sont pas des preuves d’amour.</li></ul></section>
+  <footer class="footer">Love Radar est un prototype éducatif : son analyse repose sur des règles simples, pas sur une IA ni un diagnostic. En cas de peur ou de danger immédiat, cherche du soutien auprès d’une personne de confiance ou des services d’urgence locaux.</footer>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+document.querySelectorAll('[data-example]').forEach(b=>b.addEventListener('click',()=>{$('behavior').value=b.dataset.example;$('behavior').focus()}));
+function classify(text,freq,reaction){
+ const t=text.toLowerCase();
+ const has=s=>s.some(x=>t.includes(x));
+ let level='amber',title='Hmm… à surveiller',emoji='👀',summary='Il manque peut-être du contexte. Observe si ses actes sont cohérents dans le temps.',why='Un comportement peut avoir plusieurs explications. Le plus révélateur est souvent sa répétition et sa réaction quand tu exprimes ce que tu ressens.',observe=['Est-ce ponctuel ou est-ce que ça se répète ?','Peux-tu en parler librement sans craindre sa réaction ?','Ses actes correspondent-ils à ses paroles ?'],question='Est-ce que je me sens respectée, libre et en sécurité dans cette relation ?',bestie='On observe les faits, pas juste le potentiel. Tu n’as pas à te convaincre que tout va bien si quelque chose te met mal à l’aise.';
+ const danger=has(['menace','menacé','menace de','me fait peur','j’ai peur de lui','jai peur de lui','frappe','gifle','pousse','étrangle','force à','forcee','forcée','m’oblige','menaces','violence','me suit partout','surveille mon téléphone','surveille mon telephone','prend mon téléphone','prend mon telephone']);
+ const control=has(['contrôle','controle','interdit','mes vêtements','mes vetements','avec qui je sors','où je suis','ou je suis','localisation','mot de passe','mes amies','mes amis','me culpabilise','me fait culpabiliser','me rabaisse','m’insulte','minsulte','me coupe de']);
+ const boundary=has(['respecte quand je dis non','respecte mon non','ne me met jamais la pression','écoute mes limites','ecoute mes limites','s’excuse et change','assume ses torts','respecte mes limites']);
+ const hotcold=has(['annule souvent','disparaît','disparait','ne répond jamais','ne repond jamais','chaud-froid','chaud froid','revient quand ça l’arrange','revient quand ca larrange','promet mais','dit une chose et fait']);
+ const lovebomb=has(['après quelques jours','apres quelques jours','après deux jours','apres deux jours','âme sœur dès','ame soeur des','veut déjà vivre ensemble','veut deja vivre ensemble','m’aime déjà','maime deja','couvre de cadeaux']);
+ if(danger){level='red';title='🚩 Alerte sécurité';emoji='🛑';summary='Ce que tu décris peut être dangereux. Ta sécurité passe avant le décryptage de la relation.';why='Les menaces, la violence, la coercition ou le fait d’avoir peur de sa réaction sont à prendre au sérieux. Ce n’est pas à toi de le calmer ni de gérer ça seule.';observe=['Est-ce que tu es en sécurité maintenant ?','Parle à une personne de confiance et évite une confrontation seule si tu crains sa réaction.','Si le danger est immédiat, contacte les services d’urgence de ton pays.'];question='De quoi ai-je besoin pour me sentir en sécurité, dès maintenant ?';bestie='Bestie, tu n’as pas à attendre que ça empire pour demander de l’aide.'}
+ else if(control || (reaction==='angry')){level='red';title='Red flag 🚩';emoji='🚩';summary='Le contrôle, la culpabilisation ou une réaction qui te fait peur ne sont pas des preuves d’amour.';why='Une relation saine laisse de la place à ton autonomie, à tes amitiés et à ton désaccord. Si tu exprimes une limite et qu’il te punit, t’intimide ou cherche à décider à ta place, c’est préoccupant.';observe=['Est-ce qu’il accepte un « non » sans représailles ?','Essaie-t-il de t’éloigner de tes proches ou de contrôler tes choix ?','Est-ce que tu modifies ton comportement par peur de sa réaction ?'];question='Est-ce que je me sens libre de dire non et de vivre ma vie ?';bestie='La jalousie n’est pas un certificat d’amour, ma belle.'}
+ else if(boundary && reaction!=='dismisses' && reaction!=='angry'){level='green';title='Green flag 💚';emoji='💚';summary='Le respect des limites et l’écoute sont de bons signes.';why='Une personne qui accepte ton « non », écoute tes besoins et ajuste son comportement montre des bases relationnelles saines. Le plus important est que cela reste vrai dans la durée.';observe=['Ses actes restent-ils cohérents avec ses paroles ?','Peut-il accepter un désaccord sans te punir ?','Les efforts sont-ils réciproques ?'];question='Est-ce que je me sens respectée et libre d’être moi-même avec lui ?';bestie='On aime un homme qui respecte les limites sans avoir besoin d’un mode d’emploi. 💅'}
+ else if(hotcold || lovebomb || reaction==='dismisses' || freq==='often'){level='red';title='Red flag potentiel 🚩';emoji='🚩';summary='Le schéma répété mérite ton attention, surtout s’il balaie tes ressentis.';why=hotcold?'Les annulations ou les disparitions répétées peuvent indiquer un manque de fiabilité ou des attentes différentes. Le contexte compte, mais tu peux regarder si ses actes suivent ses promesses.':lovebomb?'Les grandes déclarations très tôt ne prouvent pas une manipulation à elles seules. En revanche, une intensité précipitée qui s’accompagne de pression, de contrôle ou d’un non-respect de tes limites est préoccupante.':'La répétition et le refus d’entendre ton ressenti sont plus significatifs qu’un incident isolé. Une relation saine laisse de la place à une conversation honnête.';observe=['Le comportement change-t-il après une conversation claire ?','Les promesses se traduisent-elles par des actes ?','Te sens-tu souvent anxieuse, coupable ou obligée de courir après lui ?'];question='Si rien ne changeait pendant six mois, est-ce que cette relation me conviendrait ?';bestie='Ne tombe pas amoureuse du potentiel au point d’ignorer la réalité.'}
+ else if(freq==='once' && reaction==='listens'){level='green';title='Plutôt bon signe 💚';emoji='💚';summary='Un incident isolé suivi d’une écoute sincère peut se réparer.';why='Tout le monde peut être maladroit. Reconnaître l’impact de ses actes, s’excuser sans renverser la faute et faire différemment ensuite sont des signes positifs.';observe=['Ses excuses sont-elles précises et sans « mais » ?','Le changement se voit-il dans la durée ?','Tes limites restent-elles respectées ?'];question='Est-ce qu’il prend sa part de responsabilité, au-delà des mots ?';bestie='On cherche quelqu’un de responsable, pas quelqu’un de parfait.'}
+ if(freq==='often' && level==='green'){level='amber';title='À confirmer dans la durée 👀';emoji='👀';summary='Même un comportement positif doit s’inscrire dans un ensemble cohérent.'}
+ if(reaction==='dismisses' && level!=='red'){level='red';title='Red flag potentiel 🚩';emoji='🚩';summary='Minimiser tes émotions ou te culpabiliser quand tu parles d’une limite est préoccupant.';why='Il n’a pas besoin d’être d’accord avec tout, mais il devrait pouvoir écouter sans se moquer ni te faire porter toute la faute.'}
+ return {level,title,emoji,summary,why,observe,question,bestie,danger};
+}
+$('analyze').addEventListener('click',()=>{
+ const text=$('behavior').value.trim();if(!text){$('behavior').focus();$('behavior').placeholder='Raconte-nous d’abord ce qui s’est passé 💌';return}
+ const r=classify(text,$('frequency').value,$('reaction').value);
+ $('verdict').className='verdict '+r.level;$('emoji').textContent=r.emoji;$('verdictTitle').textContent=r.title;$('summary').textContent=r.summary;$('why').textContent=r.why;$('question').textContent=r.question;$('bestie').textContent=r.bestie;
+ $('observe').innerHTML='';r.observe.forEach(s=>{const li=document.createElement('li');li.textContent=s;$('observe').appendChild(li)});
+ $('safety').textContent=r.danger?'Si tu es en France et que tu es en danger immédiat, appelle le 17 ou le 112. Pour un soutien lié aux violences conjugales, le 3919 peut informer et orienter (ce n’est pas un numéro d’urgence).': 'Le radar donne une piste, pas un verdict définitif. Si tu te sens en danger, fais confiance à ce signal et cherche du soutien auprès d’une personne de confiance.';
+ $('result').style.display='block';$('result').scrollIntoView({behavior:'smooth',block:'start'});
+});
+$('reset').addEventListener('click',()=>{$('result').style.display='none';$('behavior').value='';$('frequency').value='once';$('reaction').value='unknown';$('formCard').scrollIntoView({behavior:'smooth',block:'start'});});
+</script>
+</body>
+</html>
